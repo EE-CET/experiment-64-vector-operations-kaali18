@@ -15,27 +15,35 @@ public class VectorOperations {
             
             switch (choice) {
                 case 1:
-                    // TODO: Read the name and add it to the vector
-                    // Print "Added"
-                    
+                    if (scanner.hasNext()) {
+                        String name = scanner.next();
+                        students.add(name);
+                        System.out.println("Added");
+                    }
                     break;
                     
                 case 2:
-                    // TODO: Read the name and the 1-based index
-                    // Insert the name at the correct 0-based index in the vector
-                    // Print "Inserted"
-                    
+                    if (scanner.hasNext()) {
+                        String name2 = scanner.next();
+                        int index = scanner.nextInt();
+                        if (index >= 1 && index <= students.size() + 1) {
+                            students.add(index - 1, name2);
+                            System.out.println("Inserted");
+                        }
+                    }
                     break;
                     
                 case 3:
-                    // TODO: Read the name and remove it from the vector
-                    // Print "Removed"
-                    
+                    if (scanner.hasNext()) {
+                        String name3 = scanner.next();
+                        if (students.remove(name3)) {
+                            System.out.println("Removed");
+                        }
+                    }
                     break;
                     
                 case 4:
-                    // TODO: Display the vector
-                    
+                    System.out.println(students.toString());
                     break;
                     
                 default:
